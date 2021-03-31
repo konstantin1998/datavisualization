@@ -1,13 +1,4 @@
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -15,10 +6,10 @@ import org.w3c.dom.NodeList;
 public class DOMxmlReader {
 
     public static void main(String[] args) {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(100000, 50000);
-        System.out.println(map.get(100000));
-
+        File file = new File("src/main/resources/graph.graphml");
+        TreeParser parser = new TreeParser(file);
+        parser.parse();
+        System.out.println(parser.getEdges());
     }
 
     // создаем из узла документа объект Language

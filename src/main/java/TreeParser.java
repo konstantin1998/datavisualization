@@ -13,11 +13,13 @@ public class TreeParser {
     private final List<Edge> edges;
     private  Vertex root;
     private final File graphFile;
+
     public TreeParser(File file) {
         graphFile = file;
         vertices = new HashMap<>();
         edges = new ArrayList<>();
     }
+
     public void parse() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
@@ -34,6 +36,7 @@ public class TreeParser {
 
         root = findRoot();
     }
+
     private void parseVertices(Document document) {
         NodeList nodeList = document.getElementsByTagName("node");
         for (int i = 0; i < nodeList.getLength(); i++) {
@@ -96,6 +99,7 @@ public class TreeParser {
     public Map<Integer, Vertex> getVertices() {
         return vertices;
     }
+
     public Collection<Edge> getEdges() {
         return edges;
     }
