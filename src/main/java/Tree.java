@@ -15,14 +15,13 @@ public class Tree {
         this.vertices = vertices.values();
         this.edges = edges;
         this.root = root;
-        //setInitialCoordinates(root);
     }
 
     public void setMinVertexDistance(int distance) {
         minVertexDistance = distance;
     }
 
-    public void setNodeDistanceIncrement(int increment) {
+    public void setVertexDistanceIncrement(int increment) {
         nodeDistanceIncrement = increment;
     }
 
