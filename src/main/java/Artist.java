@@ -1,5 +1,10 @@
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Artist {
     private final Tree tree;
@@ -17,10 +22,12 @@ public class Artist {
     private int height;
 
     private final VertexArtist vertexArtist;
+    private final EdgeArtist edgeArtist;
 
     Artist(Tree tree) {
         this.tree = tree;
         vertexArtist = new VertexArtist(vertexColour, vertexRadiusPixels);
+        edgeArtist = new EdgeArtist(edgeColour, edgeThicknessPixels, vertexRadiusPixels);
     }
 
     public void draw() {
@@ -28,6 +35,8 @@ public class Artist {
         initializeImage();
         moveTreeToImageCenter();
         drawVertices();
+        drawEdges();
+        save();
     }
 
     private void setTreeCoordinates() {
@@ -61,8 +70,8 @@ public class Artist {
         int highestCoord = tree.getHighestCoord();
         int lowestCoord = tree.getLowestCoord();
 
-        int treeCenterX = (rightestCoord - leftestCoord) / 2;
-        int treeCenterY = (lowestCoord - highestCoord) / 2;
+        int treeCenterX = (rightestCoord + leftestCoord) / 2;
+        int treeCenterY = (lowestCoord + highestCoord) / 2;
         int frameCenterX = width / 2;
         int frameCenterY = height / 2;
 
@@ -76,5 +85,28 @@ public class Artist {
         }
     }
 
+    private void drawEdges() {
+        Map<Integer, Vertex> idToVertex = new HashMap<>();
+        for (Vertex v : tree.getVertices()) {
+            idToVertex.put(v.getId(), v);
+        }
 
+        edgeArtist.setImage(image);
+        for (Edge e : tree.getEdges()) {
+            Vertex source = idToVertex.get(e.getSource());
+            Vertex target = idToVertex.get(e.getTarget());
+            Point start = new Point(source.getX(), source.getY());
+            Point finish = new Point(target.getX(), target.getY());
+            edgeArtist.draw(start, finish);
+        }
+    }
+
+    private void save() {
+        File output = new File("src/main/resources/graph.jpg");
+        try {
+            ImageIO.write(image, "jpg", output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
