@@ -21,11 +21,11 @@ public class ImageProcessor {
                 for (int y = 0; y < height; y++) {
 
                     // Получаем цвет текущего пикселя
-                    Color backgroundColor = new Color(0, 1, 0);
+                    Color backgroundColor = new Color(255, 255, 255);
 
-                    Color roundColour = new Color(130, 220, 125);
+                    Color roundColour = new Color(0, 0, 255);
 
-                    if ((x - 500)*(x - 500) + (y - 500)*(y - 500) < 10000) {
+                    if ((x - 500)*(x - 500) + (y - 200)*(y - 200) < 1600) {
                         result.setRGB(x, y, roundColour.getRGB());
                     } else {
                         result.setRGB(x, y, backgroundColor.getRGB());
@@ -37,7 +37,7 @@ public class ImageProcessor {
             }
 
             // Созраняем результат в новый файл
-            File output = new File("src/main/resources/round.jpj");
+            File output = new File("src/main/resources/round.jpg");
             ImageIO.write(result, "jpg", output);
 
         } catch (IOException e) {
