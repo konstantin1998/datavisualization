@@ -1,7 +1,11 @@
+package ru.mipt.parsing;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import ru.mipt.entities.Edge;
+import ru.mipt.entities.Vertex;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

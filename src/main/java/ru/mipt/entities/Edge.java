@@ -1,3 +1,5 @@
+package ru.mipt.entities;
+
 public class Edge {
     private int source;
     private int target;

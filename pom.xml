@@ -24,7 +24,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>ImageProcessor</mainClass>
+                            <mainClass>ru.mipt.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

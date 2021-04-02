@@ -1,4 +1,5 @@
 import org.testng.annotations.Test;
+import ru.mipt.drawing.VertexArtist;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

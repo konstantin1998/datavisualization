@@ -1,3 +1,5 @@
+package ru.mipt.entities;
+
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Map;
@@ -11,7 +13,7 @@ public class Tree {
     private int minVertexDistance = 100;
     private int nodeDistanceIncrement = 100;
 
-    Tree(Vertex root, Map<Integer, Vertex> vertices, Collection<Edge> edges) {
+    public Tree(Vertex root, Map<Integer, Vertex> vertices, Collection<Edge> edges) {
         this.vertices = vertices.values();
         this.edges = edges;
         this.root = root;

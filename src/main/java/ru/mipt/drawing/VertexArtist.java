@@ -1,3 +1,5 @@
+package ru.mipt.drawing;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -6,7 +8,7 @@ public class VertexArtist {
     private final int radius;
     private BufferedImage image;
 
-    VertexArtist(Color color, int radius) {
+    public VertexArtist(Color color, int radius) {
         this.color = color;
         this.radius = radius;
     }

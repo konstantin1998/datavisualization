@@ -1,3 +1,5 @@
+package ru.mipt.entities;
+
 public class Vertex {
     private int id;
     private int x;
@@ -61,6 +63,6 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Vertex: id = " + id;
+        return "ru.mipt.entities.Vertex: id = " + id;
     }
 }

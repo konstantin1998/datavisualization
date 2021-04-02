@@ -1,3 +1,5 @@
+package ru.mipt.drawing;
+
 public class DistanceCounter {
     public static double getDistanceBetweenLineAndPoint(Point linePoint1, Point linePoint2, Point point) {
         int x1 = linePoint1.getX();

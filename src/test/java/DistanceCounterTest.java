@@ -1,4 +1,6 @@
 import org.testng.annotations.Test;
+import ru.mipt.drawing.DistanceCounter;
+import ru.mipt.drawing.Point;
 
 import static org.junit.jupiter.api.Assertions.*;
 

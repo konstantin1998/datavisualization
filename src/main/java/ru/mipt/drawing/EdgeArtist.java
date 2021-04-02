@@ -1,3 +1,5 @@
+package ru.mipt.drawing;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -7,7 +9,7 @@ public class EdgeArtist {
     private BufferedImage image;
     private final int radius;
 
-    EdgeArtist(Color color, int thickness, int radius) {
+    public EdgeArtist(Color color, int thickness, int radius) {
         this.color = color;
         this.thickness = thickness;
         this.radius = radius;

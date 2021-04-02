@@ -1,4 +1,6 @@
 import org.testng.annotations.Test;
+import ru.mipt.parsing.TreeParser;
+import ru.mipt.entities.Vertex;
 
 import java.io.File;
 

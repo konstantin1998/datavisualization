@@ -1,5 +1,12 @@
+package ru.mipt.drawing;
+
+import ru.mipt.entities.Edge;
+import ru.mipt.entities.Tree;
+import ru.mipt.entities.Vertex;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +16,7 @@ import java.util.Map;
 public class Artist {
     private final Tree tree;
     private final int minVertexDistance = 100;
-    private final int vertexDistanceIncrement = 100;
+    private final int vertexDistanceIncrement = 200;
     private final int vertexRadiusPixels = 40;
     private final int edgeThicknessPixels = 10;
     private final int paddingPixels = vertexRadiusPixels + edgeThicknessPixels;
@@ -24,7 +31,7 @@ public class Artist {
     private final VertexArtist vertexArtist;
     private final EdgeArtist edgeArtist;
 
-    Artist(Tree tree) {
+    public Artist(Tree tree) {
         this.tree = tree;
         vertexArtist = new VertexArtist(vertexColour, vertexRadiusPixels);
         edgeArtist = new EdgeArtist(edgeColour, edgeThicknessPixels, vertexRadiusPixels);

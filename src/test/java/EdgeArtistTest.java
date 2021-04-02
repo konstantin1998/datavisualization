@@ -1,4 +1,6 @@
 import org.testng.annotations.Test;
+import ru.mipt.drawing.EdgeArtist;
+import ru.mipt.drawing.Point;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
